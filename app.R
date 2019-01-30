@@ -8,10 +8,7 @@
 #
 
 library(shiny)
-library(bibliometrix)
 library(tidyverse)
-library(wordcloud)
-library(tm)
 library(RColorBrewer)
 library(rworldmap)
 library(colorRamps)
