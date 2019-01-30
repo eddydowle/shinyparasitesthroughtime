@@ -1,17 +1,27 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+#EJD 2019
+#This is a Shiny web application. You can run the application by:
+#library(shiny)
+#runGitHub( "shinyparasitesthroughtime", "eddydowle")
 
-library(shiny)
-library(tidyverse)
-library(RColorBrewer)
-library(rworldmap)
-library(colorRamps)
+
+
+if(!require('shiny'))install.packages('shiny');
+library('shiny')
+if(!require('tidyverse'))install.packages('tidyverse');
+library('tidyverse')
+if(!require('RColorBrewer'))install.packages('RColorBrewer');
+library('RColorBrewer')
+if(!require('rworldmap'))install.packages('rworldmap');
+library('rworldmap')
+if(!require('colorRamps'))install.packages('colorRamps');
+library('colorRamps')
+
+
+#library(shiny)
+#library(tidyverse)
+#library(RColorBrewer)
+#library(rworldmap)
+#library(colorRamps)
 
 
 #change to your working directory
@@ -127,7 +137,7 @@ server <- function(input, output) {
     
     if(input$timecourse=="All") {
       b<-test %>% count(.,country)
-      b<-data.frame(country=b$country,value=b$n)
+      b<-data.frame(country=b$country,value=b$n) %>% na.omit()
       b$country<-gsub('ANTIGUA','Antigua and Barbuda',b$country)
       b$country<-gsub('U ARAB EMIRATES','United Arab Emirates',b$country)
       b$country<-gsub('BOSNIA','Bosnia and herzegovina',b$country)
@@ -139,7 +149,7 @@ server <- function(input, output) {
       #      c<-test[between(test$year,2000,2005),]
       c<-test[between(test$year,input$slider2[1],input$slider2[2]),]
       c<-c %>% count(.,country)
-      c<-data.frame(country=c$country,value=c$n)
+      c<-data.frame(country=c$country,value=c$n) %>% na.omit()
       c$country<-gsub('ANTIGUA','Antigua and Barbuda',c$country)
       c$country<-gsub('U ARAB EMIRATES','United Arab Emirates',c$country)
       c$country<-gsub('BOSNIA','Bosnia and herzegovina',c$country)
@@ -151,4 +161,3 @@ server <- function(input, output) {
 
 # Run the application 
 shinyApp(ui = ui, server = server)
-
