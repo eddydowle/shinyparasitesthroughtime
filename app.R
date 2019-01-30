@@ -15,7 +15,7 @@ library(colorRamps)
 
 
 #change to your working directory
-setwd("~/Documents/CoAuthorMS/parasitebibsearch/GroupResults/")
+#setwd("~/Documents/CoAuthorMS/parasitebibsearch/GroupResults/")
 
 
 #readFilesmod<-function (...) 
