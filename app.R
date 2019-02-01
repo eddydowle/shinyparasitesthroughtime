@@ -1,6 +1,7 @@
 #EJD 2019
 #This is a Shiny web application. You can run the application by:
-#library(shiny)
+#f(!require('shiny'))install.packages('shiny');
+#library('shiny')
 #runGitHub( "shinyparasitesthroughtime", "eddydowle")
 
 
