@@ -9,3 +9,5 @@ if(!require('shiny'))install.packages('shiny');
 library('shiny')
 runGitHub( "shinyparasitesthroughtime", "eddydowle")
 ```
+R code available from
+https://github.com/eddydowle/shinyparasitesthroughtime/
